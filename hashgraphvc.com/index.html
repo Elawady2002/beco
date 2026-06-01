@@ -488,6 +488,30 @@
   transition: color 0.25s ease;
 }
 .nav-overlay__footer-link:hover { color: white; }
+
+/* ── Constrain SVG sizes so they never overflow their circles ── */
+.nav-overlay__close {
+  overflow: hidden;
+}
+.nav-overlay__close svg {
+  width: 13px !important;
+  height: 13px !important;
+  max-width: 13px;
+  max-height: 13px;
+  display: block;
+  flex-shrink: 0;
+}
+.nav-overlay__item-arrow {
+  overflow: hidden;
+}
+.nav-overlay__item-arrow svg {
+  width: 11px !important;
+  height: 11px !important;
+  max-width: 11px;
+  max-height: 11px;
+  display: block;
+  flex-shrink: 0;
+}
 </style>
 
 <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Navigation menu">

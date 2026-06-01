@@ -268,4 +268,294 @@
   }
 })();
 </script>
+
+<style>
+/* ═══════════════════════════════════════ NAV OVERLAY ═══════════════════════════════════════ */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: #05050f;
+  display: flex;
+  flex-direction: column;
+  padding: 2.4rem 2.8rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.55s cubic-bezier(0.14,1,0.34,1), visibility 0s linear 0.55s;
+  overflow: hidden;
+}
+@media(min-width:1024px){ .nav-overlay { padding: 4rem 6.4rem; } }
+
+.nav-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.55s cubic-bezier(0.14,1,0.34,1), visibility 0s linear 0s;
+}
+
+/* ── Header ── */
+.nav-overlay__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-shrink: 0;
+}
+.nav-overlay__brand {
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(155,184,225,0.55);
+  font-weight: 400;
+}
+.nav-overlay__close {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  flex-shrink: 0;
+}
+.nav-overlay__close:hover { background: white; border-color: white; }
+.nav-overlay__close:hover path { stroke: #05050f; }
+
+/* ── Nav Items ── */
+.nav-overlay__nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.nav-overlay__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(155,184,225,0.1);
+  padding: 1.4rem 0;
+  text-decoration: none;
+  color: white;
+  opacity: 0;
+  transform: translateY(2.8rem);
+  transition: opacity 0.65s cubic-bezier(0.14,1,0.34,1), transform 0.65s cubic-bezier(0.14,1,0.34,1);
+}
+@media(min-width:768px){ .nav-overlay__item { padding: 1.8rem 0; } }
+.nav-overlay__item:last-child { border-bottom: 1px solid rgba(155,184,225,0.1); }
+
+/* Staggered reveal */
+.nav-overlay.is-open .nav-overlay__item:nth-child(1) { opacity:1; transform:translateY(0); transition-delay:0.08s; }
+.nav-overlay.is-open .nav-overlay__item:nth-child(2) { opacity:1; transform:translateY(0); transition-delay:0.16s; }
+.nav-overlay.is-open .nav-overlay__item:nth-child(3) { opacity:1; transform:translateY(0); transition-delay:0.24s; }
+.nav-overlay.is-open .nav-overlay__item:nth-child(4) { opacity:1; transform:translateY(0); transition-delay:0.32s; }
+.nav-overlay.is-open .nav-overlay__item:nth-child(5) { opacity:1; transform:translateY(0); transition-delay:0.40s; }
+
+.nav-overlay__item-left { display:flex; align-items:baseline; gap:1rem; }
+
+.nav-overlay__item-title {
+  font-size: clamp(2.4rem, 7.5vw, 7rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  transition: color 0.3s ease;
+}
+.nav-overlay__item:hover .nav-overlay__item-title { color: #9bb8e1; }
+
+.nav-overlay__item-num {
+  font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+  color: rgba(155,184,225,0.4);
+  letter-spacing: 0.06em;
+  font-weight: 400;
+}
+
+.nav-overlay__item-arrow {
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  border: 1px solid rgba(155,184,225,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.35s cubic-bezier(0.14,1,0.34,1),
+              border-color 0.35s ease,
+              transform 0.35s cubic-bezier(0.14,1,0.34,1);
+}
+@media(min-width:768px){ .nav-overlay__item-arrow { width:4.2rem; height:4.2rem; } }
+.nav-overlay__item:hover .nav-overlay__item-arrow {
+  background: white;
+  border-color: white;
+  transform: rotate(45deg);
+}
+.nav-overlay__item:hover .nav-overlay__item-arrow path { stroke: #05050f; }
+
+/* ── Footer ── */
+.nav-overlay__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(155,184,225,0.1);
+  opacity: 0;
+  transform: translateY(1.2rem);
+  transition: opacity 0.6s cubic-bezier(0.14,1,0.34,1) 0.44s,
+              transform 0.6s cubic-bezier(0.14,1,0.34,1) 0.44s;
+}
+@media(min-width:640px){ .nav-overlay__footer { flex-direction:row; justify-content:space-between; } }
+.nav-overlay.is-open .nav-overlay__footer { opacity:1; transform:translateY(0); }
+
+.nav-overlay__footer-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(155,184,225,0.45);
+  margin-bottom: 0.9rem;
+}
+.nav-overlay__footer-links { display:flex; gap:2rem; flex-wrap:wrap; }
+.nav-overlay__footer-link {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.25s ease;
+}
+.nav-overlay__footer-link:hover { color: white; }
+</style>
+
+<div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Navigation menu">
+
+  <div class="nav-overlay__header">
+    <span class="nav-overlay__brand">Hashgraph Ventures</span>
+    <button class="nav-overlay__close" id="nav-overlay-close" aria-label="Close menu">
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+        <path d="M1 1L12 12M12 1L1 12" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="nav-overlay__nav" aria-label="Site navigation">
+
+    <a href="/" class="nav-overlay__item">
+      <div class="nav-overlay__item-left">
+        <span class="nav-overlay__item-title">Home</span>
+        <span class="nav-overlay__item-num">(01)</span>
+      </div>
+      <div class="nav-overlay__item-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M7 2l5 5-5 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </a>
+
+    <a href="/#manifesto" class="nav-overlay__item">
+      <div class="nav-overlay__item-left">
+        <span class="nav-overlay__item-title">Manifesto</span>
+        <span class="nav-overlay__item-num">(02)</span>
+      </div>
+      <div class="nav-overlay__item-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M7 2l5 5-5 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </a>
+
+    <a href="/#portfolio" class="nav-overlay__item">
+      <div class="nav-overlay__item-left">
+        <span class="nav-overlay__item-title">Portfolio</span>
+        <span class="nav-overlay__item-num">(03)</span>
+      </div>
+      <div class="nav-overlay__item-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M7 2l5 5-5 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </a>
+
+    <a href="/#team" class="nav-overlay__item">
+      <div class="nav-overlay__item-left">
+        <span class="nav-overlay__item-title">Team</span>
+        <span class="nav-overlay__item-num">(04)</span>
+      </div>
+      <div class="nav-overlay__item-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M7 2l5 5-5 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </a>
+
+  </nav>
+
+  <div class="nav-overlay__footer">
+    <div>
+      <p class="nav-overlay__footer-label">Follow us.</p>
+      <div class="nav-overlay__footer-links">
+        <a href="https://x.com/HashgraphVC" target="_blank" rel="noopener noreferrer" class="nav-overlay__footer-link">
+          Twitter
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 7L7 1M7 1H2M7 1V6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/hashgraph-ventures/" target="_blank" rel="noopener noreferrer" class="nav-overlay__footer-link">
+          LinkedIn
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 7L7 1M7 1H2M7 1V6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <p class="nav-overlay__footer-label">Get in touch.</p>
+      <div class="nav-overlay__footer-links">
+        <a href="mailto:info@hashgraphvc.com" class="nav-overlay__footer-link">
+          info@hashgraphvc.com
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 7L7 1M7 1H2M7 1V6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  function initNavOverlay() {
+    const menuBtn  = document.querySelector('.menu-btn');
+    const overlay  = document.getElementById('nav-overlay');
+    const closeBtn = document.getElementById('nav-overlay-close');
+    if (!overlay) return;
+
+    function openMenu() {
+      overlay.classList.add('is-open');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      overlay.classList.remove('is-open');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    if (menuBtn)  menuBtn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    // Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeMenu();
+    });
+
+    // Close after clicking a nav link (let browser navigate)
+    overlay.querySelectorAll('.nav-overlay__item').forEach(function(link) {
+      link.addEventListener('click', closeMenu);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavOverlay);
+  } else {
+    initNavOverlay();
+  }
+})();
+</script>
 </body></html>

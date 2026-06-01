@@ -9,14 +9,15 @@
   align-items: center;
   position: fixed;
   left: 2.8rem;
-  top: 2.8rem;
+  top: 3.2rem;
   z-index: 80;
   text-decoration: none;
+  transform: translateY(-50%);
 }
 @media(min-width:1024px){
   .custom-header-logo {
     left: 6.4rem;
-    top: 4.7rem;
+    top: 5rem;
   }
 }
 .custom-header-logo__img {
@@ -106,30 +107,38 @@
     let soundToggleObserver = null;
     let logoObserver = null;
     let cachedRect = null;
-    
+
+    // Align logo, icons, and sound toggle all to the same vertical center
     function updatePosition() {
       const soundToggle = document.querySelector('.sound-toggle');
-      if (soundToggle && customControls) {
-        const rect = soundToggle.getBoundingClientRect();
-        
-        if (!cachedRect || cachedRect.top !== rect.top || cachedRect.left !== rect.left || cachedRect.height !== rect.height) {
-          cachedRect = rect;
-          // Vertically center customControls with soundToggle (which is 32px height)
-          const topPos = rect.top + (rect.height - 32) / 2;
-          customControls.style.top = topPos + 'px';
-          // Align next to (to the left of) the sound toggle button with a 12px gap
-          customControls.style.right = (window.innerWidth - rect.left + 12) + 'px';
-        }
-        
-        // Sync visibility classes
+      if (!soundToggle) return;
+
+      const rect = soundToggle.getBoundingClientRect();
+      // The row center Y = midpoint of the sound toggle
+      const rowCenterY = rect.top + rect.height / 2;
+
+      // Position icons (32px tall) vertically centered on the row
+      if (customControls) {
+        const iconH = 32;
+        customControls.style.top = (rowCenterY - iconH / 2) + 'px';
+        // Place icons immediately to the left of the sound toggle with 12px gap
+        customControls.style.right = (window.innerWidth - rect.left + 12) + 'px';
+
         if (soundToggle.classList.contains('sound-toggle--visible')) {
           customControls.classList.add('custom-header-controls--visible');
         } else {
           customControls.classList.remove('custom-header-controls--visible');
         }
-      } else if (customControls) {
-        customControls.classList.remove('custom-header-controls--visible');
       }
+
+      // Position logo vertically centered on the same row center Y
+      if (customLogo) {
+        const logoH = customLogo.offsetHeight || 86; // fallback 86px ≈ 5.4rem
+        customLogo.style.top = (rowCenterY - logoH / 2) + 'px';
+        customLogo.style.transform = 'none'; // override the CSS translateY now that JS controls it
+      }
+
+      cachedRect = rect;
     }
 
     function updateLogoVisibility() {
@@ -144,7 +153,6 @@
     }
 
     function setupObservers() {
-      // Sound toggle observer
       const soundToggle = document.querySelector('.sound-toggle');
       if (soundToggle && !soundToggleObserver) {
         soundToggleObserver = new MutationObserver(() => {
@@ -154,7 +162,6 @@
         updatePosition();
       }
 
-      // Logo observer
       const originalLogo = document.querySelector('.header-logo');
       if (originalLogo && !logoObserver) {
         logoObserver = new MutationObserver(() => {
@@ -174,11 +181,11 @@
 
     window.addEventListener('resize', updatePosition, { passive: true });
     window.addEventListener('scroll', updatePosition, { passive: true });
-    
+
     setupObservers();
     updatePosition();
     updateLogoVisibility();
-    
+
     setInterval(() => {
       updatePosition();
       updateLogoVisibility();

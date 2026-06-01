@@ -16,6 +16,21 @@ app.use((req, res, next) => {
 });
 
 const dir = path.join(process.cwd(), 'hashgraphvc.com');
+
+// Explicitly serve HTML pages that have corresponding directories containing Nuxt payload files
+app.get('/privacy-policy', (req, res) => {
+  res.sendFile(path.join(dir, 'privacy-policy.html'));
+});
+app.get('/privacy-policy/', (req, res) => {
+  res.sendFile(path.join(dir, 'privacy-policy.html'));
+});
+app.get('/companies/:name', (req, res) => {
+  res.sendFile(path.join(dir, 'companies', `${req.params.name}.html`));
+});
+app.get('/companies/:name/', (req, res) => {
+  res.sendFile(path.join(dir, 'companies', `${req.params.name}.html`));
+});
+
 app.use(express.static(dir, { extensions: ['html'] }));
 
 // Fallback to index.html for SPA-like routes if any (though these are static files)

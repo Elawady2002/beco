@@ -408,11 +408,12 @@
 .nav-overlay__item:last-child { border-bottom: 1px solid rgba(155,184,225,0.1); }
 
 /* Staggered reveal */
-.nav-overlay.is-open .nav-overlay__item:nth-child(1) { opacity:1; transform:translateY(0); transition-delay:0.08s; }
-.nav-overlay.is-open .nav-overlay__item:nth-child(2) { opacity:1; transform:translateY(0); transition-delay:0.16s; }
-.nav-overlay.is-open .nav-overlay__item:nth-child(3) { opacity:1; transform:translateY(0); transition-delay:0.24s; }
-.nav-overlay.is-open .nav-overlay__item:nth-child(4) { opacity:1; transform:translateY(0); transition-delay:0.32s; }
-.nav-overlay.is-open .nav-overlay__item:nth-child(5) { opacity:1; transform:translateY(0); transition-delay:0.40s; }
+.nav-overlay.is-open .nav-overlay__item:nth-child(1) { opacity:1; transform:translateY(0); transition-delay:0.07s; }
+.nav-overlay.is-open .nav-overlay__item:nth-child(2) { opacity:1; transform:translateY(0); transition-delay:0.14s; }
+.nav-overlay.is-open .nav-overlay__item:nth-child(3) { opacity:1; transform:translateY(0); transition-delay:0.21s; }
+.nav-overlay.is-open .nav-overlay__item:nth-child(4) { opacity:1; transform:translateY(0); transition-delay:0.28s; }
+.nav-overlay.is-open .nav-overlay__item:nth-child(5) { opacity:1; transform:translateY(0); transition-delay:0.35s; }
+.nav-overlay.is-open .nav-overlay__item:nth-child(6) { opacity:1; transform:translateY(0); transition-delay:0.42s; }
 
 .nav-overlay__item-left { display:flex; align-items:baseline; gap:1rem; }
 
@@ -494,10 +495,10 @@
   overflow: hidden;
 }
 .nav-overlay__close svg {
-  width: 13px !important;
-  height: 13px !important;
-  max-width: 13px;
-  max-height: 13px;
+  width: 15px !important;
+  height: 15px !important;
+  max-width: 15px;
+  max-height: 15px;
   display: block;
   flex-shrink: 0;
 }
@@ -505,10 +506,10 @@
   overflow: hidden;
 }
 .nav-overlay__item-arrow svg {
-  width: 11px !important;
-  height: 11px !important;
-  max-width: 11px;
-  max-height: 11px;
+  width: 16px !important;
+  height: 16px !important;
+  max-width: 16px;
+  max-height: 16px;
   display: block;
   flex-shrink: 0;
 }
@@ -526,10 +527,9 @@
   </div>
 
   <nav class="nav-overlay__nav" aria-label="Site navigation">
-
-    <a href="/" class="nav-overlay__item">
+    <a href="/about" class="nav-overlay__item">
       <div class="nav-overlay__item-left">
-        <span class="nav-overlay__item-title">Home</span>
+        <span class="nav-overlay__item-title">عن الشركة</span>
         <span class="nav-overlay__item-num">(01)</span>
       </div>
       <div class="nav-overlay__item-arrow" aria-hidden="true">
@@ -538,10 +538,9 @@
         </svg>
       </div>
     </a>
-
-    <a href="/#manifesto" class="nav-overlay__item">
+    <a href="/services" class="nav-overlay__item">
       <div class="nav-overlay__item-left">
-        <span class="nav-overlay__item-title">Manifesto</span>
+        <span class="nav-overlay__item-title">خدماتنا</span>
         <span class="nav-overlay__item-num">(02)</span>
       </div>
       <div class="nav-overlay__item-arrow" aria-hidden="true">
@@ -550,10 +549,9 @@
         </svg>
       </div>
     </a>
-
-    <a href="/#portfolio" class="nav-overlay__item">
+    <a href="/projects" class="nav-overlay__item">
       <div class="nav-overlay__item-left">
-        <span class="nav-overlay__item-title">Portfolio</span>
+        <span class="nav-overlay__item-title">المشاريع</span>
         <span class="nav-overlay__item-num">(03)</span>
       </div>
       <div class="nav-overlay__item-arrow" aria-hidden="true">
@@ -562,11 +560,32 @@
         </svg>
       </div>
     </a>
-
-    <a href="/#team" class="nav-overlay__item">
+    <a href="/team" class="nav-overlay__item">
       <div class="nav-overlay__item-left">
-        <span class="nav-overlay__item-title">Team</span>
+        <span class="nav-overlay__item-title">المديرون</span>
         <span class="nav-overlay__item-num">(04)</span>
+      </div>
+      <div class="nav-overlay__item-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M7 2l5 5-5 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </a>
+    <a href="/careers" class="nav-overlay__item">
+      <div class="nav-overlay__item-left">
+        <span class="nav-overlay__item-title">التوظيف</span>
+        <span class="nav-overlay__item-num">(05)</span>
+      </div>
+      <div class="nav-overlay__item-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M7 2l5 5-5 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </a>
+    <a href="/contact" class="nav-overlay__item">
+      <div class="nav-overlay__item-left">
+        <span class="nav-overlay__item-title">اتصل بنا</span>
+        <span class="nav-overlay__item-num">(06)</span>
       </div>
       <div class="nav-overlay__item-arrow" aria-hidden="true">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

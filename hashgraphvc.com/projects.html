@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Us | Beco Contracting</title>
-  <meta name="description" content="Get in touch with Beco Contracting for civil engineering, structural development, and architectural design inquiries in Riyadh, Saudi Arabia.">
+  <title>Our Projects | Beco Contracting</title>
+  <meta name="description" content="Browse Beco Contracting's portfolio of structural concrete, architectural engineering, MEP, and turnkey projects completed in Riyadh, Saudi Arabia.">
   
   <!-- Modern Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -126,7 +126,7 @@
       color: var(--accent-color);
     }
 
-    /* Dropdown Indicator */
+    /* Dropdown Navigation styling */
     .has-dropdown {
       display: inline-flex;
       align-items: center;
@@ -210,31 +210,30 @@
       transition: var(--transition-smooth);
     }
 
-    .btn-outline:hover,
-    .btn-outline.active {
+    .btn-outline:hover {
       background-color: var(--text-primary);
       color: var(--bg-color);
       border-color: var(--text-primary);
     }
 
-    /* Contact Page Content */
-    .contact-page {
+    /* Projects Page Content */
+    .projects-page {
       padding-top: 10rem;
       padding-bottom: 8rem;
     }
 
-    /* Header Title block with (08) subscript and circle arrow button */
-    .contact-header-block {
+    /* Header Title block with (03) subscript and circle arrow button */
+    .projects-header-block {
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-bottom: 2px solid var(--text-primary);
       padding: 4rem 0 2rem 0;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
       position: relative;
     }
 
-    .contact-header-title {
+    .projects-header-title {
       font-family: var(--font-headings);
       font-weight: 900;
       font-size: clamp(3.2rem, 10vw, 7.8rem);
@@ -247,7 +246,7 @@
       gap: 0.6rem;
     }
 
-    .contact-header-title .header-num {
+    .projects-header-title .header-num {
       font-size: clamp(0.9rem, 2vw, 1.4rem);
       font-weight: 600;
       color: var(--accent-color);
@@ -283,172 +282,141 @@
       background-color: var(--accent-color);
     }
 
-    /* Grid Layout */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 6rem;
-      margin-top: 2rem;
-    }
-
-    /* Left side contact coordinates */
-    .contact-details {
+    /* Interactive Filter Bar */
+    .filter-bar {
       display: flex;
-      flex-direction: column;
-      gap: 3.5rem;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-bottom: 4rem;
+      list-style: none;
     }
 
-    .contact-detail-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-
-    .detail-label {
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
       font-family: var(--font-headings);
-      font-size: 0.85rem;
       font-weight: 700;
+      font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--accent-color);
+      letter-spacing: 1px;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
     }
 
-    .detail-val {
-      font-size: clamp(1.1rem, 2vw, 1.6rem);
-      font-family: var(--font-body);
-      font-weight: 400;
-      color: var(--text-primary);
-      line-height: 1.4;
+    .filter-btn:hover,
+    .filter-btn.active {
+      color: var(--bg-color);
+      background-color: var(--text-primary);
+      border-color: var(--text-primary);
     }
 
-    .detail-val:hover {
-      color: var(--accent-hover);
+    /* Portfolio Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      transition: var(--transition-smooth);
     }
 
-    .detail-val.address-text {
-      color: var(--text-primary);
-      cursor: default;
-    }
-
-    /* Right side contact form */
-    .contact-form-container {
-      background-color: transparent;
-    }
-
-    .contact-form {
+    .project-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 3.5rem;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
+      transition: var(--transition-smooth);
       position: relative;
     }
 
-    .form-label {
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(155, 184, 225, 0.25);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+
+    .project-img-wrapper {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+      background-color: #08080c;
+    }
+
+    .project-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: var(--transition-smooth);
+    }
+
+    .project-card:hover .project-img-wrapper img {
+      transform: scale(1.06);
+    }
+
+    .project-num {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      background-color: rgba(5,5,8,0.75);
+      backdrop-filter: blur(4px);
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
       font-family: var(--font-headings);
       font-size: 0.85rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--text-primary);
-      margin-bottom: 0.5rem;
+      color: var(--accent-color);
+      border: 1px solid rgba(255,255,255,0.08);
+      z-index: 5;
     }
 
-    /* Minimalist underline inputs */
-    .contact-form input[type="text"],
-    .contact-form input[type="email"],
-    .contact-form textarea {
-      width: 100%;
-      background: transparent;
-      border: none;
-      border-bottom: 1.5px solid rgba(255, 255, 255, 0.25);
-      padding: 0.8rem 0;
-      color: var(--text-primary);
-      font-family: var(--font-body);
-      font-size: 1.1rem;
-      outline: none;
-      transition: var(--transition-smooth);
-    }
-
-    .contact-form textarea {
-      resize: none;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-bottom-color: var(--accent-color);
-      box-shadow: 0 1px 0 var(--accent-color);
-    }
-
-    /* Input sublabel details */
-    .input-sublabel {
-      font-size: 0.78rem;
-      color: var(--text-secondary);
-      margin-top: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    /* Name Inline group */
-    .inline-inputs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-    }
-
-    .input-subgroup {
+    .project-info {
+      padding: 1.8rem;
       display: flex;
       flex-direction: column;
+      gap: 0.8rem;
+      flex-grow: 1;
     }
 
-    /* Submit Button styling */
-    .form-submit {
-      margin-top: 1.5rem;
+    .project-tags {
+      font-family: var(--font-headings);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .btn-submit {
+    .project-title {
+      font-family: var(--font-headings);
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--text-primary);
+      line-height: 1.25;
+      transition: var(--transition-smooth);
+    }
+
+    .project-card:hover .project-title {
+      color: var(--accent-color);
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.2rem;
+      margin-top: auto;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .meta-item {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      background-color: var(--text-primary);
-      color: var(--bg-color);
-      border: none;
-      font-family: var(--font-headings);
-      font-weight: 800;
-      font-size: 0.95rem;
-      letter-spacing: 2px;
-      padding: 1.1rem 3.5rem;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: var(--transition-smooth);
-      box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1);
-    }
-
-    .btn-submit:hover {
-      background-color: var(--accent-color);
-      color: var(--bg-color);
-      box-shadow: 0 6px 20px rgba(155, 184, 225, 0.3);
-      transform: translateY(-2px);
-    }
-
-    /* Form Feedback styling */
-    .form-status {
-      margin-top: 1.5rem;
-      font-size: 0.95rem;
-      display: none;
-      padding: 1rem;
-      border-radius: 4px;
-      transition: var(--transition-smooth);
-    }
-    
-    .form-status.success {
-      display: block;
-      background-color: rgba(40, 167, 69, 0.15);
-      border: 1px solid rgba(40, 167, 69, 0.3);
-      color: #2ee65e;
+      gap: 6px;
     }
 
     /* Main Footer */
@@ -557,9 +525,9 @@
 
     /* Responsive Breakdown */
     @media (max-width: 1024px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 5rem;
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
       }
       .footer-grid {
         grid-template-columns: 1fr 1fr;
@@ -574,9 +542,9 @@
       .nav-links {
         display: none;
       }
-      .inline-inputs {
+      .projects-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 2rem;
       }
       .footer-grid {
         grid-template-columns: 1fr;
@@ -604,7 +572,7 @@
         <li><a href="/" id="nav-home">Home</a></li>
         <li><a href="/about" id="nav-about">About Us</a></li>
         <li class="nav-item-dropdown">
-          <a href="#" class="has-dropdown" id="nav-pages">
+          <a href="#" class="has-dropdown active" id="nav-pages">
             Pages
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 1L5 5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -619,17 +587,17 @@
         </li>
       </ul>
       
-      <a href="/contact" class="btn-outline active" id="nav-contact-btn">Contact Us</a>
+      <a href="/contact" class="btn-outline" id="nav-contact-btn">Contact Us</a>
     </div>
   </header>
 
-  <!-- Contact Page Content -->
-  <main class="contact-page" id="contact-page">
+  <!-- Projects Page Content -->
+  <main class="projects-page" id="projects-page">
     <div class="container">
       
-      <!-- CONTACT header block with subscript and arrow button -->
-      <div class="contact-header-block" id="contact-title-block">
-        <h1 class="contact-header-title">Contact Us <span class="header-num">(08)</span></h1>
+      <!-- PROJECTS header block -->
+      <div class="projects-header-block" id="projects-title-block">
+        <h1 class="projects-header-title">Projects <span class="header-num">(03)</span></h1>
         <div class="circle-arrow-btn" id="header-arrow-btn">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 2l10 10M12 4v8H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -637,71 +605,143 @@
         </div>
       </div>
 
-      <div class="contact-grid">
+      <!-- Filter Controls -->
+      <div class="filter-container">
+        <ul class="filter-bar" id="project-filters">
+          <li><button class="filter-btn active" data-filter="all">All Projects</button></li>
+          <li><button class="filter-btn" data-filter="civil">Civil & Structural</button></li>
+          <li><button class="filter-btn" data-filter="arch">Architectural & Fit-out</button></li>
+          <li><button class="filter-btn" data-filter="mep">MEP & Industrial</button></li>
+        </ul>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projects-grid">
         
-        <!-- Left Side: Beco Contact Coordinates -->
-        <div class="contact-details" id="contact-coords">
-          <div class="contact-detail-item">
-            <span class="detail-label">Email</span>
-            <a href="mailto:info@beco.com.sa" class="detail-val">info@beco.com.sa</a>
+        <!-- Project 1 -->
+        <div class="project-card" data-category="civil" id="project-1">
+          <span class="project-num">01</span>
+          <div class="project-img-wrapper">
+            <img src="/vigraph-assets/project_tower.png" alt="Al-Aqeeq Tower Riyadh">
           </div>
-          
-          <div class="contact-detail-item">
-            <span class="detail-label">Phone</span>
-            <a href="tel:0544655171" class="detail-val">+966 544655171</a>
-          </div>
-          
-          <div class="contact-detail-item">
-            <span class="detail-label">Office Address</span>
-            <p class="detail-val address-text">
-              2573 Yusuf Bin Ahmad, Al Rawdah Dist.<br>
-              P.O. Box 13211, Riyadh, KSA
-            </p>
+          <div class="project-info">
+            <span class="project-tags">Civil & Building</span>
+            <h3 class="project-title">Al-Aqeeq Commercial Tower</h3>
+            <div class="project-meta">
+              <span class="meta-item">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                </svg>
+                Riyadh, KSA
+              </span>
+              <span class="meta-item">2024</span>
+            </div>
           </div>
         </div>
 
-        <!-- Right Side: Minimalist Underline Form -->
-        <div class="contact-form-container" id="form-container">
-          <form class="contact-form" id="beco-contact-form" action="#" method="POST">
-            
-            <!-- First and Last Name Stacked Inline -->
-            <div class="form-group name-group">
-              <label class="form-label">Name (required)</label>
-              <div class="inline-inputs">
-                <div class="input-subgroup">
-                  <input type="text" name="first_name" id="first_name" required autocomplete="given-name">
-                  <span class="input-sublabel">First name</span>
-                </div>
-                <div class="input-subgroup">
-                  <input type="text" name="last_name" id="last_name" required autocomplete="family-name">
-                  <span class="input-sublabel">Last name</span>
-                </div>
-              </div>
+        <!-- Project 2 -->
+        <div class="project-card" data-category="arch" id="project-2">
+          <span class="project-num">02</span>
+          <div class="project-img-wrapper">
+            <img src="/vigraph-assets/project_villas.png" alt="Al-Malqa Luxury Villas">
+          </div>
+          <div class="project-info">
+            <span class="project-tags">Architectural</span>
+            <h3 class="project-title">Al-Malqa Luxury Villas</h3>
+            <div class="project-meta">
+              <span class="meta-item">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                </svg>
+                Riyadh, KSA
+              </span>
+              <span class="meta-item">2025</span>
             </div>
+          </div>
+        </div>
 
-            <!-- Email Address Input -->
-            <div class="form-group">
-              <label class="form-label" for="email">Email (required)</label>
-              <input type="email" name="email" id="email" required autocomplete="email" placeholder="beco@example.com">
+        <!-- Project 3 -->
+        <div class="project-card" data-category="mep" id="project-3">
+          <span class="project-num">03</span>
+          <div class="project-img-wrapper">
+            <img src="/vigraph-assets/project_sports.png" alt="Sports Complex Structural Mechanical">
+          </div>
+          <div class="project-info">
+            <span class="project-tags">MEP & Structural</span>
+            <h3 class="project-title">Sports Complex Arena</h3>
+            <div class="project-meta">
+              <span class="meta-item">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                </svg>
+                Riyadh, KSA
+              </span>
+              <span class="meta-item">2023</span>
             </div>
+          </div>
+        </div>
 
-            <!-- Message Textarea -->
-            <div class="form-group">
-              <label class="form-label" for="message">Message (required)</label>
-              <textarea name="message" id="message" rows="4" required placeholder="Describe your project requirements..."></textarea>
+        <!-- Project 4 -->
+        <div class="project-card" data-category="civil" id="project-4">
+          <span class="project-num">04</span>
+          <div class="project-img-wrapper">
+            <img src="/vigraph-assets/service_development.png" alt="Al-Yasmin Complex Housing Development">
+          </div>
+          <div class="project-info">
+            <span class="project-tags">Civil & Turnkey</span>
+            <h3 class="project-title">Al-Yasmin Smart Community</h3>
+            <div class="project-meta">
+              <span class="meta-item">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                </svg>
+                Riyadh, KSA
+              </span>
+              <span class="meta-item">2024</span>
             </div>
+          </div>
+        </div>
 
-            <!-- Submit trigger -->
-            <div class="form-submit">
-              <button type="submit" class="btn-submit" id="submit-btn">SUBMIT</button>
+        <!-- Project 5 -->
+        <div class="project-card" data-category="civil" id="project-5">
+          <span class="project-num">05</span>
+          <div class="project-img-wrapper">
+            <img src="/vigraph-assets/service_excavation.png" alt="Diriyah Gate Site Excavation">
+          </div>
+          <div class="project-info">
+            <span class="project-tags">Heavy Excavation</span>
+            <h3 class="project-title">Diriyah Gate Site Grading</h3>
+            <div class="project-meta">
+              <span class="meta-item">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                </svg>
+                Riyadh, KSA
+              </span>
+              <span class="meta-item">2022</span>
             </div>
-            
-            <!-- Success feedback placeholder -->
-            <div class="form-status" id="form-feedback">
-              Thank you! Your message has been sent successfully. We will get back to you shortly.
-            </div>
+          </div>
+        </div>
 
-          </form>
+        <!-- Project 6 -->
+        <div class="project-card" data-category="mep" id="project-6">
+          <span class="project-num">06</span>
+          <div class="project-img-wrapper">
+            <img src="/vigraph-assets/service_electrical.png" alt="Al-Qairawan HQ MEP infrastructure">
+          </div>
+          <div class="project-info">
+            <span class="project-tags">MEP Infrastructure</span>
+            <h3 class="project-title">Al-Qairawan HQ Wiring</h3>
+            <div class="project-meta">
+              <span class="meta-item">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                </svg>
+                Riyadh, KSA
+              </span>
+              <span class="meta-item">2023</span>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -802,32 +842,34 @@
       }
     });
 
-    // Form submission animation handling
-    document.getElementById('beco-contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const submitBtn = document.getElementById('submit-btn');
-      const feedback = document.getElementById('form-feedback');
-      
-      submitBtn.textContent = 'SENDING...';
-      submitBtn.disabled = true;
-      submitBtn.style.opacity = '0.7';
-      
-      setTimeout(function() {
-        submitBtn.textContent = 'SUBMIT';
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = '1';
-        
-        feedback.classList.add('success');
-        
-        // Reset form
-        document.getElementById('beco-contact-form').reset();
-        
-        // Fade out success message after 5 seconds
-        setTimeout(function() {
-          feedback.classList.remove('success');
-        }, 5000);
-      }, 1200);
+    // Portfolio Filtering logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Toggle active class on buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          if (filterValue === 'all') {
+            card.style.display = 'flex';
+            setTimeout(() => card.style.opacity = '1', 50);
+          } else {
+            const cardCategory = card.getAttribute('data-category');
+            if (cardCategory === filterValue) {
+              card.style.display = 'flex';
+              setTimeout(() => card.style.opacity = '1', 50);
+            } else {
+              card.style.opacity = '0';
+              setTimeout(() => card.style.display = 'none', 300);
+            }
+          }
+        });
+      });
     });
   </script>
 </body>

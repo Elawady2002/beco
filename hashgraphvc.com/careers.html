@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Us | Beco Contracting</title>
-  <meta name="description" content="Get in touch with Beco Contracting for civil engineering, structural development, and architectural design inquiries in Riyadh, Saudi Arabia.">
+  <title>Careers | Beco Contracting</title>
+  <meta name="description" content="Join Beco Contracting and help build modern infrastructure projects in Riyadh, Saudi Arabia. Explore open engineering, architectural, and project management positions.">
   
   <!-- Modern Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -126,7 +126,7 @@
       color: var(--accent-color);
     }
 
-    /* Dropdown Indicator */
+    /* Dropdown Navigation styling */
     .has-dropdown {
       display: inline-flex;
       align-items: center;
@@ -210,21 +210,20 @@
       transition: var(--transition-smooth);
     }
 
-    .btn-outline:hover,
-    .btn-outline.active {
+    .btn-outline:hover {
       background-color: var(--text-primary);
       color: var(--bg-color);
       border-color: var(--text-primary);
     }
 
-    /* Contact Page Content */
-    .contact-page {
+    /* Careers Page Content */
+    .careers-page {
       padding-top: 10rem;
       padding-bottom: 8rem;
     }
 
-    /* Header Title block with (08) subscript and circle arrow button */
-    .contact-header-block {
+    /* Header Title block with (05) subscript and circle arrow button */
+    .careers-header-block {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -234,7 +233,7 @@
       position: relative;
     }
 
-    .contact-header-title {
+    .careers-header-title {
       font-family: var(--font-headings);
       font-weight: 900;
       font-size: clamp(3.2rem, 10vw, 7.8rem);
@@ -247,7 +246,7 @@
       gap: 0.6rem;
     }
 
-    .contact-header-title .header-num {
+    .careers-header-title .header-num {
       font-size: clamp(0.9rem, 2vw, 1.4rem);
       font-weight: 600;
       color: var(--accent-color);
@@ -284,61 +283,66 @@
     }
 
     /* Grid Layout */
-    .contact-grid {
+    .careers-grid {
       display: grid;
-      grid-template-columns: 1fr 1.5fr;
+      grid-template-columns: 1.2fr 1fr;
       gap: 6rem;
       margin-top: 2rem;
     }
 
-    /* Left side contact coordinates */
-    .contact-details {
+    /* Left side openings list */
+    .openings-list {
       display: flex;
       flex-direction: column;
-      gap: 3.5rem;
+      gap: 3rem;
     }
 
-    .contact-detail-item {
+    .opening-item {
       display: flex;
       flex-direction: column;
-      gap: 0.8rem;
+      gap: 1rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border-color);
     }
 
-    .detail-label {
+    .opening-item:last-child {
+      border-bottom: none;
+    }
+
+    .opening-meta {
+      display: flex;
+      gap: 1.5rem;
       font-family: var(--font-headings);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       color: var(--accent-color);
     }
 
-    .detail-val {
-      font-size: clamp(1.1rem, 2vw, 1.6rem);
-      font-family: var(--font-body);
-      font-weight: 400;
+    .opening-title {
+      font-family: var(--font-headings);
+      font-weight: 700;
+      font-size: 1.6rem;
       color: var(--text-primary);
-      line-height: 1.4;
+      line-height: 1.2;
     }
 
-    .detail-val:hover {
-      color: var(--accent-hover);
+    .opening-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
 
-    .detail-val.address-text {
-      color: var(--text-primary);
-      cursor: default;
-    }
-
-    /* Right side contact form */
-    .contact-form-container {
+    /* Right side application form */
+    .careers-form-container {
       background-color: transparent;
     }
 
-    .contact-form {
+    .careers-form {
       display: flex;
       flex-direction: column;
-      gap: 3.5rem;
+      gap: 3rem;
     }
 
     .form-group {
@@ -357,10 +361,11 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Minimalist underline inputs */
-    .contact-form input[type="text"],
-    .contact-form input[type="email"],
-    .contact-form textarea {
+    /* Underline inputs */
+    .careers-form input[type="text"],
+    .careers-form input[type="email"],
+    .careers-form select,
+    .careers-form textarea {
       width: 100%;
       background: transparent;
       border: none;
@@ -373,17 +378,33 @@
       transition: var(--transition-smooth);
     }
 
-    .contact-form textarea {
+    /* Dark select styling */
+    .careers-form select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.5rem center;
+      background-size: 10px 6px;
+    }
+
+    .careers-form select option {
+      background-color: #0c0c0e;
+      color: var(--text-primary);
+      padding: 10px;
+    }
+
+    .careers-form textarea {
       resize: none;
     }
 
-    .contact-form input:focus,
-    .contact-form textarea:focus {
+    .careers-form input:focus,
+    .careers-form select:focus,
+    .careers-form textarea:focus {
       border-bottom-color: var(--accent-color);
       box-shadow: 0 1px 0 var(--accent-color);
     }
 
-    /* Input sublabel details */
     .input-sublabel {
       font-size: 0.78rem;
       color: var(--text-secondary);
@@ -392,7 +413,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Name Inline group */
     .inline-inputs {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -404,7 +424,6 @@
       flex-direction: column;
     }
 
-    /* Submit Button styling */
     .form-submit {
       margin-top: 1.5rem;
     }
@@ -434,7 +453,6 @@
       transform: translateY(-2px);
     }
 
-    /* Form Feedback styling */
     .form-status {
       margin-top: 1.5rem;
       font-size: 0.95rem;
@@ -557,7 +575,7 @@
 
     /* Responsive Breakdown */
     @media (max-width: 1024px) {
-      .contact-grid {
+      .careers-grid {
         grid-template-columns: 1fr;
         gap: 5rem;
       }
@@ -604,7 +622,7 @@
         <li><a href="/" id="nav-home">Home</a></li>
         <li><a href="/about" id="nav-about">About Us</a></li>
         <li class="nav-item-dropdown">
-          <a href="#" class="has-dropdown" id="nav-pages">
+          <a href="#" class="has-dropdown active" id="nav-pages">
             Pages
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 1L5 5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -619,17 +637,17 @@
         </li>
       </ul>
       
-      <a href="/contact" class="btn-outline active" id="nav-contact-btn">Contact Us</a>
+      <a href="/contact" class="btn-outline" id="nav-contact-btn">Contact Us</a>
     </div>
   </header>
 
-  <!-- Contact Page Content -->
-  <main class="contact-page" id="contact-page">
+  <!-- Careers Page Content -->
+  <main class="careers-page" id="careers-page">
     <div class="container">
       
-      <!-- CONTACT header block with subscript and arrow button -->
-      <div class="contact-header-block" id="contact-title-block">
-        <h1 class="contact-header-title">Contact Us <span class="header-num">(08)</span></h1>
+      <!-- CAREERS header block -->
+      <div class="careers-header-block" id="careers-title-block">
+        <h1 class="careers-header-title">Careers <span class="header-num">(05)</span></h1>
         <div class="circle-arrow-btn" id="header-arrow-btn">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 2l10 10M12 4v8H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -637,32 +655,49 @@
         </div>
       </div>
 
-      <div class="contact-grid">
+      <div class="careers-grid">
         
-        <!-- Left Side: Beco Contact Coordinates -->
-        <div class="contact-details" id="contact-coords">
-          <div class="contact-detail-item">
-            <span class="detail-label">Email</span>
-            <a href="mailto:info@beco.com.sa" class="detail-val">info@beco.com.sa</a>
-          </div>
+        <!-- Left Side: Available Openings -->
+        <div class="openings-list" id="openings-list">
           
-          <div class="contact-detail-item">
-            <span class="detail-label">Phone</span>
-            <a href="tel:0544655171" class="detail-val">+966 544655171</a>
+          <!-- Job 1 -->
+          <div class="opening-item" id="job-1">
+            <div class="opening-meta">
+              <span>Engineering</span>
+              <span>Full-Time</span>
+              <span>Riyadh, KSA</span>
+            </div>
+            <h3 class="opening-title">Senior Structural Engineer</h3>
+            <p class="opening-desc">We are looking for an experienced Structural Engineer to lead Beco's structural concrete works, load planning calculations, and manage site inspections. 7+ years of experience in Riyadh projects required.</p>
           </div>
-          
-          <div class="contact-detail-item">
-            <span class="detail-label">Office Address</span>
-            <p class="detail-val address-text">
-              2573 Yusuf Bin Ahmad, Al Rawdah Dist.<br>
-              P.O. Box 13211, Riyadh, KSA
-            </p>
+
+          <!-- Job 2 -->
+          <div class="opening-item" id="job-2">
+            <div class="opening-meta">
+              <span>Design</span>
+              <span>Full-Time</span>
+              <span>Riyadh, KSA</span>
+            </div>
+            <h3 class="opening-title">Architectural Façade Designer</h3>
+            <p class="opening-desc">Join our design engineering team to craft high-end villa facades and corporate building elevations. Proficiency in CAD/3D modeling and familiarization with Riyadh municipality permit processes is a must.</p>
           </div>
+
+          <!-- Job 3 -->
+          <div class="opening-item" id="job-3">
+            <div class="opening-meta">
+              <span>Operations</span>
+              <span>Full-Time</span>
+              <span>Riyadh, KSA</span>
+            </div>
+            <h3 class="opening-title">MEP Project Manager</h3>
+            <p class="opening-desc">Seeking a detail-oriented electrical or mechanical engineer to oversee Beco's MEP systems installation, distribution panels wiring mapping, and water/HVAC network deployments on site.</p>
+          </div>
+
         </div>
 
-        <!-- Right Side: Minimalist Underline Form -->
-        <div class="contact-form-container" id="form-container">
-          <form class="contact-form" id="beco-contact-form" action="#" method="POST">
+        <!-- Right Side: Application Underline Form -->
+        <div class="careers-form-container" id="form-container">
+          <form class="careers-form" id="beco-careers-form" action="#" method="POST">
             
             <!-- First and Last Name Stacked Inline -->
             <div class="form-group name-group">
@@ -682,23 +717,41 @@
             <!-- Email Address Input -->
             <div class="form-group">
               <label class="form-label" for="email">Email (required)</label>
-              <input type="email" name="email" id="email" required autocomplete="email" placeholder="beco@example.com">
+              <input type="email" name="email" id="email" required autocomplete="email" placeholder="applicant@example.com">
             </div>
 
-            <!-- Message Textarea -->
+            <!-- Position Applied For Dropdown -->
             <div class="form-group">
-              <label class="form-label" for="message">Message (required)</label>
-              <textarea name="message" id="message" rows="4" required placeholder="Describe your project requirements..."></textarea>
+              <label class="form-label" for="position">Position Applied For (required)</label>
+              <select name="position" id="position" required>
+                <option value="" disabled selected>Select a position...</option>
+                <option value="Senior Structural Engineer">Senior Structural Engineer</option>
+                <option value="Architectural Façade Designer">Architectural Façade Designer</option>
+                <option value="MEP Project Manager">MEP Project Manager</option>
+                <option value="General Inquiry">General Application / Other</option>
+              </select>
+            </div>
+
+            <!-- CV/Resume Link input -->
+            <div class="form-group">
+              <label class="form-label" for="resume_link">Resume / CV Link (required)</label>
+              <input type="text" name="resume_link" id="resume_link" required placeholder="Google Drive, Dropbox, or LinkedIn URL">
+            </div>
+
+            <!-- Cover Letter Textarea -->
+            <div class="form-group">
+              <label class="form-label" for="cover_letter">Cover Letter / Introduction (required)</label>
+              <textarea name="cover_letter" id="cover_letter" rows="4" required placeholder="Introduce yourself and describe your contracting experience..."></textarea>
             </div>
 
             <!-- Submit trigger -->
             <div class="form-submit">
-              <button type="submit" class="btn-submit" id="submit-btn">SUBMIT</button>
+              <button type="submit" class="btn-submit" id="submit-btn">SUBMIT APPLICATION</button>
             </div>
             
             <!-- Success feedback placeholder -->
             <div class="form-status" id="form-feedback">
-              Thank you! Your message has been sent successfully. We will get back to you shortly.
+              Thank you! Your job application has been submitted successfully. Beco's HR team will contact you soon.
             </div>
 
           </form>
@@ -803,7 +856,7 @@
     });
 
     // Form submission animation handling
-    document.getElementById('beco-contact-form').addEventListener('submit', function(e) {
+    document.getElementById('beco-careers-form').addEventListener('submit', function(e) {
       e.preventDefault();
       
       const submitBtn = document.getElementById('submit-btn');
@@ -814,14 +867,14 @@
       submitBtn.style.opacity = '0.7';
       
       setTimeout(function() {
-        submitBtn.textContent = 'SUBMIT';
+        submitBtn.textContent = 'SUBMIT APPLICATION';
         submitBtn.disabled = false;
         submitBtn.style.opacity = '1';
         
         feedback.classList.add('success');
         
         // Reset form
-        document.getElementById('beco-contact-form').reset();
+        document.getElementById('beco-careers-form').reset();
         
         // Fade out success message after 5 seconds
         setTimeout(function() {

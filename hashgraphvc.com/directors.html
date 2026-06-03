@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Us | Beco Contracting</title>
-  <meta name="description" content="Get in touch with Beco Contracting for civil engineering, structural development, and architectural design inquiries in Riyadh, Saudi Arabia.">
+  <title>Board of Directors | Beco Contracting</title>
+  <meta name="description" content="Meet Beco Contracting's executive leadership and board directors guiding civil engineering and urban development projects in Riyadh, Saudi Arabia.">
   
   <!-- Modern Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -126,7 +126,7 @@
       color: var(--accent-color);
     }
 
-    /* Dropdown Indicator */
+    /* Dropdown Navigation styling */
     .has-dropdown {
       display: inline-flex;
       align-items: center;
@@ -210,31 +210,30 @@
       transition: var(--transition-smooth);
     }
 
-    .btn-outline:hover,
-    .btn-outline.active {
+    .btn-outline:hover {
       background-color: var(--text-primary);
       color: var(--bg-color);
       border-color: var(--text-primary);
     }
 
-    /* Contact Page Content */
-    .contact-page {
+    /* Directors Page Content */
+    .directors-page {
       padding-top: 10rem;
       padding-bottom: 8rem;
     }
 
-    /* Header Title block with (08) subscript and circle arrow button */
-    .contact-header-block {
+    /* Header Title block with (04) subscript and circle arrow button */
+    .directors-header-block {
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-bottom: 2px solid var(--text-primary);
       padding: 4rem 0 2rem 0;
-      margin-bottom: 4rem;
+      margin-bottom: 5rem;
       position: relative;
     }
 
-    .contact-header-title {
+    .directors-header-title {
       font-family: var(--font-headings);
       font-weight: 900;
       font-size: clamp(3.2rem, 10vw, 7.8rem);
@@ -247,7 +246,7 @@
       gap: 0.6rem;
     }
 
-    .contact-header-title .header-num {
+    .directors-header-title .header-num {
       font-size: clamp(0.9rem, 2vw, 1.4rem);
       font-weight: 600;
       color: var(--accent-color);
@@ -283,172 +282,86 @@
       background-color: var(--accent-color);
     }
 
-    /* Grid Layout */
-    .contact-grid {
+    /* Directors Grid */
+    .directors-grid {
       display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 6rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
     }
 
-    /* Left side contact coordinates */
-    .contact-details {
+    .director-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 3rem;
       display: flex;
-      flex-direction: column;
-      gap: 3.5rem;
-    }
-
-    .contact-detail-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-
-    .detail-label {
-      font-family: var(--font-headings);
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--accent-color);
-    }
-
-    .detail-val {
-      font-size: clamp(1.1rem, 2vw, 1.6rem);
-      font-family: var(--font-body);
-      font-weight: 400;
-      color: var(--text-primary);
-      line-height: 1.4;
-    }
-
-    .detail-val:hover {
-      color: var(--accent-hover);
-    }
-
-    .detail-val.address-text {
-      color: var(--text-primary);
-      cursor: default;
-    }
-
-    /* Right side contact form */
-    .contact-form-container {
-      background-color: transparent;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 3.5rem;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .form-label {
-      font-family: var(--font-headings);
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--text-primary);
-      margin-bottom: 0.5rem;
-    }
-
-    /* Minimalist underline inputs */
-    .contact-form input[type="text"],
-    .contact-form input[type="email"],
-    .contact-form textarea {
-      width: 100%;
-      background: transparent;
-      border: none;
-      border-bottom: 1.5px solid rgba(255, 255, 255, 0.25);
-      padding: 0.8rem 0;
-      color: var(--text-primary);
-      font-family: var(--font-body);
-      font-size: 1.1rem;
-      outline: none;
+      gap: 2.5rem;
+      align-items: center;
       transition: var(--transition-smooth);
     }
 
-    .contact-form textarea {
-      resize: none;
+    .director-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(155, 184, 225, 0.25);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
     }
 
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-bottom-color: var(--accent-color);
-      box-shadow: 0 1px 0 var(--accent-color);
-    }
-
-    /* Input sublabel details */
-    .input-sublabel {
-      font-size: 0.78rem;
-      color: var(--text-secondary);
-      margin-top: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    /* Name Inline group */
-    .inline-inputs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-    }
-
-    .input-subgroup {
+    /* Premium styled CSS monograms */
+    .director-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0d0d12 0%, #161622 100%);
+      border: 2px solid rgba(155, 184, 225, 0.15);
       display: flex;
-      flex-direction: column;
-    }
-
-    /* Submit Button styling */
-    .form-submit {
-      margin-top: 1.5rem;
-    }
-
-    .btn-submit {
-      display: inline-flex;
       align-items: center;
       justify-content: center;
-      background-color: var(--text-primary);
-      color: var(--bg-color);
-      border: none;
       font-family: var(--font-headings);
       font-weight: 800;
-      font-size: 0.95rem;
-      letter-spacing: 2px;
-      padding: 1.1rem 3.5rem;
-      border-radius: 4px;
-      cursor: pointer;
+      font-size: 2.2rem;
+      color: var(--accent-color);
+      letter-spacing: 1px;
+      flex-shrink: 0;
+      box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.5), 0 4px 14px rgba(0, 0, 0, 0.3);
       transition: var(--transition-smooth);
-      box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
 
-    .btn-submit:hover {
-      background-color: var(--accent-color);
-      color: var(--bg-color);
-      box-shadow: 0 6px 20px rgba(155, 184, 225, 0.3);
-      transform: translateY(-2px);
+    .director-card:hover .director-avatar {
+      color: var(--text-primary);
+      border-color: var(--accent-color);
+      background: linear-gradient(135deg, #161622 0%, var(--bg-color) 100%);
+      transform: scale(1.05);
     }
 
-    /* Form Feedback styling */
-    .form-status {
-      margin-top: 1.5rem;
-      font-size: 0.95rem;
-      display: none;
-      padding: 1rem;
-      border-radius: 4px;
-      transition: var(--transition-smooth);
+    .director-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
     }
-    
-    .form-status.success {
-      display: block;
-      background-color: rgba(40, 167, 69, 0.15);
-      border: 1px solid rgba(40, 167, 69, 0.3);
-      color: #2ee65e;
+
+    .director-role {
+      font-family: var(--font-headings);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .director-name {
+      font-family: var(--font-headings);
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .director-bio {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-top: 0.5rem;
     }
 
     /* Main Footer */
@@ -557,9 +470,9 @@
 
     /* Responsive Breakdown */
     @media (max-width: 1024px) {
-      .contact-grid {
+      .directors-grid {
         grid-template-columns: 1fr;
-        gap: 5rem;
+        gap: 3rem;
       }
       .footer-grid {
         grid-template-columns: 1fr 1fr;
@@ -574,8 +487,10 @@
       .nav-links {
         display: none;
       }
-      .inline-inputs {
-        grid-template-columns: 1fr;
+      .director-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2.5rem;
         gap: 1.5rem;
       }
       .footer-grid {
@@ -604,7 +519,7 @@
         <li><a href="/" id="nav-home">Home</a></li>
         <li><a href="/about" id="nav-about">About Us</a></li>
         <li class="nav-item-dropdown">
-          <a href="#" class="has-dropdown" id="nav-pages">
+          <a href="#" class="has-dropdown active" id="nav-pages">
             Pages
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 1L5 5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -619,17 +534,17 @@
         </li>
       </ul>
       
-      <a href="/contact" class="btn-outline active" id="nav-contact-btn">Contact Us</a>
+      <a href="/contact" class="btn-outline" id="nav-contact-btn">Contact Us</a>
     </div>
   </header>
 
-  <!-- Contact Page Content -->
-  <main class="contact-page" id="contact-page">
+  <!-- Directors Page Content -->
+  <main class="directors-page" id="directors-page">
     <div class="container">
       
-      <!-- CONTACT header block with subscript and arrow button -->
-      <div class="contact-header-block" id="contact-title-block">
-        <h1 class="contact-header-title">Contact Us <span class="header-num">(08)</span></h1>
+      <!-- DIRECTORS header block -->
+      <div class="directors-header-block" id="directors-title-block">
+        <h1 class="directors-header-title">Directors <span class="header-num">(04)</span></h1>
         <div class="circle-arrow-btn" id="header-arrow-btn">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 2l10 10M12 4v8H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -637,71 +552,47 @@
         </div>
       </div>
 
-      <div class="contact-grid">
+      <!-- Leaders Grid -->
+      <div class="directors-grid" id="directors-grid">
         
-        <!-- Left Side: Beco Contact Coordinates -->
-        <div class="contact-details" id="contact-coords">
-          <div class="contact-detail-item">
-            <span class="detail-label">Email</span>
-            <a href="mailto:info@beco.com.sa" class="detail-val">info@beco.com.sa</a>
-          </div>
-          
-          <div class="contact-detail-item">
-            <span class="detail-label">Phone</span>
-            <a href="tel:0544655171" class="detail-val">+966 544655171</a>
-          </div>
-          
-          <div class="contact-detail-item">
-            <span class="detail-label">Office Address</span>
-            <p class="detail-val address-text">
-              2573 Yusuf Bin Ahmad, Al Rawdah Dist.<br>
-              P.O. Box 13211, Riyadh, KSA
-            </p>
+        <!-- Leader 1 -->
+        <div class="director-card" id="director-1">
+          <div class="director-avatar">AO</div>
+          <div class="director-info">
+            <span class="director-role">Founder & CEO</span>
+            <h3 class="director-name">Eng. Abdulaziz Al-Otaibi</h3>
+            <p class="director-bio">With over 15 years of infrastructure leadership in Saudi Arabia, Eng. Abdulaziz founded Beco to redefine contracting standards through premium quality and execution.</p>
           </div>
         </div>
 
-        <!-- Right Side: Minimalist Underline Form -->
-        <div class="contact-form-container" id="form-container">
-          <form class="contact-form" id="beco-contact-form" action="#" method="POST">
-            
-            <!-- First and Last Name Stacked Inline -->
-            <div class="form-group name-group">
-              <label class="form-label">Name (required)</label>
-              <div class="inline-inputs">
-                <div class="input-subgroup">
-                  <input type="text" name="first_name" id="first_name" required autocomplete="given-name">
-                  <span class="input-sublabel">First name</span>
-                </div>
-                <div class="input-subgroup">
-                  <input type="text" name="last_name" id="last_name" required autocomplete="family-name">
-                  <span class="input-sublabel">Last name</span>
-                </div>
-              </div>
-            </div>
+        <!-- Leader 2 -->
+        <div class="director-card" id="director-2">
+          <div class="director-avatar">TM</div>
+          <div class="director-info">
+            <span class="director-role">CTO & Head of Engineering</span>
+            <h3 class="director-name">Eng. Tariq Mansour</h3>
+            <p class="director-bio">A structural concrete specialist, Eng. Tariq oversees civil engineering compliance and structural blueprint calculations across Beco's project portfolio.</p>
+          </div>
+        </div>
 
-            <!-- Email Address Input -->
-            <div class="form-group">
-              <label class="form-label" for="email">Email (required)</label>
-              <input type="email" name="email" id="email" required autocomplete="email" placeholder="beco@example.com">
-            </div>
+        <!-- Leader 3 -->
+        <div class="director-card" id="director-3">
+          <div class="director-avatar">FS</div>
+          <div class="director-info">
+            <span class="director-role">Executive Board Director</span>
+            <h3 class="director-name">Dr. Faisal Al-Sabah</h3>
+            <p class="director-bio">Dr. Faisal directs corporate strategy, investment coordination, and alignment of Beco's large-scale developments with Saudi Vision 2030 initiatives.</p>
+          </div>
+        </div>
 
-            <!-- Message Textarea -->
-            <div class="form-group">
-              <label class="form-label" for="message">Message (required)</label>
-              <textarea name="message" id="message" rows="4" required placeholder="Describe your project requirements..."></textarea>
-            </div>
-
-            <!-- Submit trigger -->
-            <div class="form-submit">
-              <button type="submit" class="btn-submit" id="submit-btn">SUBMIT</button>
-            </div>
-            
-            <!-- Success feedback placeholder -->
-            <div class="form-status" id="form-feedback">
-              Thank you! Your message has been sent successfully. We will get back to you shortly.
-            </div>
-
-          </form>
+        <!-- Leader 4 -->
+        <div class="director-card" id="director-4">
+          <div class="director-avatar">SJ</div>
+          <div class="director-info">
+            <span class="director-role">Director of Interior Design</span>
+            <h3 class="director-name">Sarah Al-Jameel</h3>
+            <p class="director-bio">Sarah leads the design engineering division, driving high-end architectural aesthetics and luxury decor fit-outs for commercial lobbies and residential projects.</p>
+          </div>
         </div>
 
       </div>
@@ -800,34 +691,6 @@
         header.style.boxShadow = 'none';
         header.style.padding = '2rem 0';
       }
-    });
-
-    // Form submission animation handling
-    document.getElementById('beco-contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const submitBtn = document.getElementById('submit-btn');
-      const feedback = document.getElementById('form-feedback');
-      
-      submitBtn.textContent = 'SENDING...';
-      submitBtn.disabled = true;
-      submitBtn.style.opacity = '0.7';
-      
-      setTimeout(function() {
-        submitBtn.textContent = 'SUBMIT';
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = '1';
-        
-        feedback.classList.add('success');
-        
-        // Reset form
-        document.getElementById('beco-contact-form').reset();
-        
-        // Fade out success message after 5 seconds
-        setTimeout(function() {
-          feedback.classList.remove('success');
-        }, 5000);
-      }, 1200);
     });
   </script>
 </body>

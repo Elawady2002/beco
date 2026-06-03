@@ -36,6 +36,24 @@ app.get('/contact', (req, res) => {
 app.get('/contact/', (req, res) => {
   res.sendFile(path.join(dir, 'contact.html'));
 });
+app.get('/projects', (req, res) => {
+  res.sendFile(path.join(dir, 'projects.html'));
+});
+app.get('/projects/', (req, res) => {
+  res.sendFile(path.join(dir, 'projects.html'));
+});
+app.get('/team', (req, res) => {
+  res.sendFile(path.join(dir, 'directors.html'));
+});
+app.get('/team/', (req, res) => {
+  res.sendFile(path.join(dir, 'directors.html'));
+});
+app.get('/careers', (req, res) => {
+  res.sendFile(path.join(dir, 'careers.html'));
+});
+app.get('/careers/', (req, res) => {
+  res.sendFile(path.join(dir, 'careers.html'));
+});
 app.get('/privacy-policy', (req, res) => {
   res.sendFile(path.join(dir, 'privacy-policy.html'));
 });

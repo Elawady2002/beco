@@ -18,6 +18,12 @@ app.use((req, res, next) => {
 const dir = path.join(process.cwd(), 'hashgraphvc.com');
 
 // Explicitly serve HTML pages that have corresponding directories containing Nuxt payload files
+app.get('/about', (req, res) => {
+  res.sendFile(path.join(dir, 'about.html'));
+});
+app.get('/about/', (req, res) => {
+  res.sendFile(path.join(dir, 'about.html'));
+});
 app.get('/privacy-policy', (req, res) => {
   res.sendFile(path.join(dir, 'privacy-policy.html'));
 });

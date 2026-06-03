@@ -24,6 +24,12 @@ app.get('/about', (req, res) => {
 app.get('/about/', (req, res) => {
   res.sendFile(path.join(dir, 'about.html'));
 });
+app.get('/services', (req, res) => {
+  res.sendFile(path.join(dir, 'services.html'));
+});
+app.get('/services/', (req, res) => {
+  res.sendFile(path.join(dir, 'services.html'));
+});
 app.get('/privacy-policy', (req, res) => {
   res.sendFile(path.join(dir, 'privacy-policy.html'));
 });

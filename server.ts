@@ -30,6 +30,12 @@ app.get('/services', (req, res) => {
 app.get('/services/', (req, res) => {
   res.sendFile(path.join(dir, 'services.html'));
 });
+app.get('/contact', (req, res) => {
+  res.sendFile(path.join(dir, 'contact.html'));
+});
+app.get('/contact/', (req, res) => {
+  res.sendFile(path.join(dir, 'contact.html'));
+});
 app.get('/privacy-policy', (req, res) => {
   res.sendFile(path.join(dir, 'privacy-policy.html'));
 });
